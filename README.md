@@ -65,10 +65,13 @@ a.strip! #=> ["hello", "world"]
 ```
 
 3. instance
+```
 a = ["hello ", " world"]
-a.class_eval do
-  include  RecursionStrip
+a.instance_eval do
+	class << self
+		include  RecursionStrip
+	end
 end
 a.strip!
 
-...
+```
