@@ -37,7 +37,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 
 给对象添加一个递归删除字符串前后空格的方法 strip!
 
-1. ActionController::Parameters 对象删除参数前后字符串
+1. ActionController::Parameters 对象删除参数前后空字符串
 
 ```
 ActionController::Parameters.class_eval do

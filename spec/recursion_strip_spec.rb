@@ -12,12 +12,10 @@ describe RecursionStrip do
       expect(a.strip!).to eq ["hello", "world"]
     end
 
-    it "for string" do
+    it "for string instance" do
       str = "hello world   "
-      str.instance_eval do
-        class << self
+      str.singleton_class.class_eval do
           include RecursionStrip
-        end
       end
       expect(str.strip!).to eq "hello world"
     end
