@@ -28,6 +28,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "rspec", "~> 3.9"
+  spec.add_development_dependency 'pry-byebug', '~> 3.9'
   # spec.add_development_dependency "cucumber", '~> 5.2'
   # spec.add_development_dependency "aruba"
 

@@ -34,3 +34,41 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/recursion_strip.
 
+
+给对象添加一个递归删除字符串前后空格的方法 strip!
+
+1. ActionController::Parameters 对象删除参数前后字符串
+
+```
+ActionController::Parameters.class_eval do
+  include RecursionStrip
+end
+```
+
+application_controller.rb
+```
+before_action :strip_params
+
+def strip_params
+  params.strip!
+end
+```
+
+2. Array
+```
+class Array
+  include RecursionStrip
+end
+
+a = ["hello ", " world"]
+a.strip! #=> ["hello", "world"]
+```
+
+3. instance
+a = ["hello ", " world"]
+a.class_eval do
+  include  RecursionStrip
+end
+a.strip!
+
+...
